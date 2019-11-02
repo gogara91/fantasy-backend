@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="b4c0f1fe-8afe-41b4-8ab2-0a4ea3272520" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../.gitattributes" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CONTRIBUTING.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/commands/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/config/app.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/config/auth.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/config/cache.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/config/compile.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/config/database.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/config/local/app.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/config/local/database.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/config/mail.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/config/packages/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/config/queue.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/config/remote.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/config/services.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/config/session.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/config/testing/cache.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/config/testing/session.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/config/view.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/config/workbench.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/controllers/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/controllers/BaseController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/controllers/HomeController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/database/migrations/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/database/production.sqlite" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/database/seeds/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/database/seeds/DatabaseSeeder.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/filters.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lang/en/pagination.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lang/en/reminders.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/lang/en/validation.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/models/User.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/routes.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/start/artisan.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/start/global.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/start/local.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/storage/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/storage/cache/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/storage/logs/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/storage/meta/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/storage/sessions/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/storage/views/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/tests/ExampleTest.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/tests/TestCase.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/views/emails/auth/reminder.blade.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../app/views/hello.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../artisan" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bootstrap/autoload.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bootstrap/paths.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../bootstrap/start.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../composer.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../phpunit.xml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/.htaccess" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/favicon.ico" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/index.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/packages/.gitkeep" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../public/robots.txt" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../readme.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../server.php" beforeDir="false" />
+    </list>
+    <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ComposerSettings" synchronizationState="SYNCHRONIZE">
+    <pharConfigPath>$PROJECT_DIR$/composer.json</pharConfigPath>
+    <execution>
+      <executable />
+    </execution>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="PhpWorkspaceProjectConfiguration">
+    <include_path>
+      <path value="$PROJECT_DIR$/vendor/ircmaxell/password-compat" />
+      <path value="$PROJECT_DIR$/vendor/paragonie/random_compat" />
+      <path value="$PROJECT_DIR$/vendor/patchwork/utf8" />
+      <path value="$PROJECT_DIR$/vendor/phpseclib/phpseclib" />
+      <path value="$PROJECT_DIR$/vendor/jeremeamia/superclosure" />
+      <path value="$PROJECT_DIR$/vendor/composer" />
+      <path value="$PROJECT_DIR$/vendor/swiftmailer/swiftmailer" />
+      <path value="$PROJECT_DIR$/vendor/kylekatarnls/update-helper" />
+      <path value="$PROJECT_DIR$/vendor/classpreloader/classpreloader" />
+      <path value="$PROJECT_DIR$/vendor/psr/log" />
+      <path value="$PROJECT_DIR$/vendor/filp/whoops" />
+      <path value="$PROJECT_DIR$/vendor/nikic/php-parser" />
+      <path value="$PROJECT_DIR$/vendor/stack/builder" />
+      <path value="$PROJECT_DIR$/vendor/d11wtq/boris" />
+      <path value="$PROJECT_DIR$/vendor/nesbot/carbon" />
+      <path value="$PROJECT_DIR$/vendor/predis/predis" />
+      <path value="$PROJECT_DIR$/vendor/laravel/framework" />
+      <path value="$PROJECT_DIR$/vendor/monolog/monolog" />
+      <path value="$PROJECT_DIR$/vendor/symfony/browser-kit" />
+      <path value="$PROJECT_DIR$/vendor/symfony/console" />
+      <path value="$PROJECT_DIR$/vendor/symfony/css-selector" />
+      <path value="$PROJECT_DIR$/vendor/symfony/debug" />
+      <path value="$PROJECT_DIR$/vendor/symfony/dom-crawler" />
+      <path value="$PROJECT_DIR$/vendor/symfony/event-dispatcher" />
+      <path value="$PROJECT_DIR$/vendor/symfony/filesystem" />
+      <path value="$PROJECT_DIR$/vendor/symfony/finder" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-foundation" />
+      <path value="$PROJECT_DIR$/vendor/symfony/http-kernel" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-ctype" />
+      <path value="$PROJECT_DIR$/vendor/symfony/polyfill-mbstring" />
+      <path value="$PROJECT_DIR$/vendor/symfony/process" />
+      <path value="$PROJECT_DIR$/vendor/symfony/routing" />
+      <path value="$PROJECT_DIR$/vendor/symfony/security-core" />
+      <path value="$PROJECT_DIR$/vendor/symfony/translation" />
+    </include_path>
+  </component>
+  <component name="ProjectId" id="1T3vY0J3RDGdWFYZFVgdIswjbuw" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="PropertiesComponent">
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
+  </component>
+  <component name="RunDashboard">
+    <option name="ruleStates">
+      <list>
+        <RuleState>
+          <option name="name" value="ConfigurationTypeDashboardGroupingRule" />
+        </RuleState>
+        <RuleState>
+          <option name="name" value="StatusDashboardGroupingRule" />
+        </RuleState>
+      </list>
+    </option>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="b4c0f1fe-8afe-41b4-8ab2-0a4ea3272520" name="Default Changelist" comment="" />
+      <created>1572701637343</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1572701637343</updated>
+      <workItem from="1572701640439" duration="759000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

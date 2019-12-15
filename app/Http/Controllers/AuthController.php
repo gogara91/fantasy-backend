@@ -6,6 +6,8 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use \App\Http\Requests\RegisterUserRequest;
+use App\User;
+
 
 class AuthController extends Controller
 {
@@ -28,13 +30,16 @@ class AuthController extends Controller
      */
 
     public function register(RegisterUserRequest $request) {
-        return \App\Player::find(1)->get();
+        return User::create([
+            'name' => $request->name,
+            'email' =>  $request->email,
+            'password' => bcrypt($request->password),
+        ]);
     }
 
     public function login(Request $request)
     {
         $credentials = $request->only('email', 'password');
-
         if ($token = $this->guard()->attempt($credentials)) {
             return $this->respondWithToken($token);
         }

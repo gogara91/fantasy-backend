@@ -24,7 +24,7 @@ Route::group([
     Route::post('register', 'AuthController@register');
 });
 
-Route::group(['middleware' => 'auth:api'], function($router) {
+Route::group(['middleware' => 'guest:api'], function($router) {
     Route::get('/teams', 'TeamsController@index');
     Route::get('/players', 'TeamsController@index');
 

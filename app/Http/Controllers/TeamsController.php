@@ -46,7 +46,7 @@ class TeamsController extends Controller
      */
     public function show($id)
     {
-        //
+        return Team::with('players')->findOrFail($id);
     }
 
     /**

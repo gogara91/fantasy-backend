@@ -39,7 +39,7 @@ class TeamPlayerPivotSeeder extends Seeder
 
         DB::update(
             "UPDATE team_player_pivot SET
-            contract_signed = NOW() WHERE contract_signed IS NOT NULL"
+            contract_signed = NOW() WHERE contract_ended IS NOT NULL"
         );
 
         DB::update(

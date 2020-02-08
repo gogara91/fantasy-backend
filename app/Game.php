@@ -6,16 +6,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Game extends Model
 {
-    public $fillable = ['home_team_id', 'away_team_id', 'round_id'];
+    public $fillable = ['home_team_id', 'away_team_id', 'round_id', 'date'];
 
     public function homeTeam()
     {
-        return $this->hasOne(Team::class);
+        return $this->belongsTo(Team::class, 'home_team_id');
     }
 
     public function awayTeam()
     {
-        return $this->hasOne(Team::class);
+        return $this->belongsTo(Team::class, 'away_team_id');
     }
 
     public function gameEvents()
@@ -25,6 +25,6 @@ class Game extends Model
 
     public function round()
     {
-        return $this->hasOne(Round::class);
+        return $this->belongsTo(Round::class);
     }
 }

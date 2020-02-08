@@ -38,18 +38,29 @@ class SeasonSeeder extends Seeder
         }
 
         $games = [];
+        $odd = true;
+        $date = new DateTime('2019-07-01');
         foreach($rounds as $key => $round) {
+            $date->modify('+5 days');
            $dbRound = Round::create([
                'season_id' => $season->id,
                'number' => $key+1
            ]);
            foreach($round as $game) {
-               Game::create([
-                    'home_team_id' => $game['home_team'],
-                    'away_team_id' => $game['away_team'],
-                    'round_id' => $dbRound->id
-                ]);
+               $gameData = ['round_id' => $dbRound->id];
+               if($odd) {
+                   $gameData['home_team_id'] = $game['home_team'];
+                   $gameData['away_team_id'] = $game['away_team'];
+                   $gameData['date'] = $date->format('Y-m-d');
+               }
+               else {
+                   $gameData['home_team_id'] = $game['away_team'];
+                   $gameData[ 'away_team_id'] = $game['home_team'];
+                   $gameData[ 'date'] = $date->format('Y-m-d');
+               }
+               Game::create($gameData);
            }
+            $odd = !$odd;
         }
         $ROUNDS = Round::with('games')->get()->toArray();
         $nextNumber = array_reverse($ROUNDS)[0]['number'] + 1;

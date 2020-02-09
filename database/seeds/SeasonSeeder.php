@@ -39,7 +39,7 @@ class SeasonSeeder extends Seeder
 
         $games = [];
         $odd = true;
-        $date = new DateTime('2019-07-01');
+        $date = new DateTime('2019-07-01 21:00:00');
         foreach($rounds as $key => $round) {
             $date->modify('+5 days');
            $dbRound = Round::create([
@@ -51,12 +51,12 @@ class SeasonSeeder extends Seeder
                if($odd) {
                    $gameData['home_team_id'] = $game['home_team'];
                    $gameData['away_team_id'] = $game['away_team'];
-                   $gameData['date'] = $date->format('Y-m-d');
+                   $gameData['time'] = $date->format('Y-m-d');
                }
                else {
                    $gameData['home_team_id'] = $game['away_team'];
                    $gameData[ 'away_team_id'] = $game['home_team'];
-                   $gameData[ 'date'] = $date->format('Y-m-d');
+                   $gameData[ 'time'] = $date->format('Y-m-d');
                }
                Game::create($gameData);
            }

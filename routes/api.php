@@ -26,6 +26,8 @@ Route::group([
 
 Route::group(['middleware' => 'auth:api'], function($router) {
     Route::resource('/teams', 'TeamsController');
+    Route::resource('/games', 'GamesController');
+    Route::resource('/rounds', 'RoundsController');
     Route::resource('/players', 'TeamsController@index');
     Route::resource('/teams/games', 'TeamGamesController');
 });

@@ -3,9 +3,9 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
-use App\Team;
+use App\Game;
 
-class TeamsController extends Controller
+class GamesController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -14,7 +14,7 @@ class TeamsController extends Controller
      */
     public function index()
     {
-        return Team::with('players')->get();
+        return Game::with('homeTeam', 'awayTeam', 'round')->get();
     }
 
     /**
@@ -46,7 +46,7 @@ class TeamsController extends Controller
      */
     public function show($id)
     {
-        return Team::with('players')->findOrFail($id);
+        //
     }
 
     /**
@@ -69,9 +69,7 @@ class TeamsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        $team = Team::findOrFail($id);
-        $team->update($request->all());
-        return Team::findOrFail($id);
+        //
     }
 
     /**

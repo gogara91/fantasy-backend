@@ -27,7 +27,7 @@ Route::group([
 Route::group(['middleware' => 'auth:api'], function($router) {
     Route::resource('/teams', 'TeamsController');
     Route::resource('/games', 'GamesController');
-    Route::put('/games/start-game/{id}', 'GamesController@startGame');
+    Route::post('/games/start-game/{id}', 'GamesController@startGame');
     Route::resource('/rounds', 'RoundsController');
     Route::resource('/players', 'TeamsController@index');
     Route::resource('/teams/games', 'TeamGamesController');

@@ -10,7 +10,7 @@ class Lineup extends Model
 
     public function player()
     {
-        return $this->hasOne(Player::class);
+        return $this->hasOne(Player::class, 'id','player_id');
     }
 
     public function team()
@@ -28,6 +28,7 @@ class Lineup extends Model
         foreach($lineup as $player) {
             $playerData = [
                 'player_id' => $player,
+                'game_id' => $game->id,
                 'team_id' => $game->$teamIdRefference,
                 'starter' => 0,
                 'currently_on_court' => 0

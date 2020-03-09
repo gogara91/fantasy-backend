@@ -27,4 +27,39 @@ class Game extends Model
     {
         return $this->belongsTo(Round::class);
     }
+
+    public function homeTeamLineup()
+    {
+        return $this->hasMany(Lineup::class);
+    }
+
+    public function awayTeamLineup()
+    {
+        return $this->hasMany(Lineup::class);
+    }
+
+    public static function fetchLiveGame($id)
+    {
+        $game = self::findOrFail($id);
+        if($game->game_status != 2) {
+            return response()->json(
+                ['message' => 'Error', 'data' => ['error' => 'Game not started!']],
+                404
+            );
+        }
+
+        return self::with([
+            'gameEvents',
+            'homeTeam',
+            'awayTeam',
+            'homeTeamLineup' => function($query) use($game) {
+                $query->where('team_id', '=', $game->home_team_id)->with('player');
+            },
+            'awayTeamLineup' => function($query) use($game) {
+                $query->where('team_id', '=', $game->away_team_id)->with('player');
+            },
+        ])
+        ->where('id', '=', $id)
+        ->first();
+    }
 }

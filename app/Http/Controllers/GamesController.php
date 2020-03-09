@@ -42,4 +42,9 @@ class GamesController extends Controller
         Lineup::createLineup($lineups['awayTeamLineup'], $lineups['awayTeamStarters'], $game, 'away_team_id');
     }
 
+    public function liveGame($id)
+    {
+        return Game::fetchLiveGame($id);
+    }
+
 }

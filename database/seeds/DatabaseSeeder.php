@@ -18,5 +18,6 @@ class DatabaseSeeder extends Seeder
         $this->call(ConferencesSeeder::class);
         $this->call(DivisionsSeeder::class);
         $this->call(SeasonSeeder::class);
+        $this->call(StatTypesSeeder::class);
     }
 }

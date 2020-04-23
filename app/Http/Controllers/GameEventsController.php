@@ -36,9 +36,22 @@ class GameEventsController extends Controller
      */
     public function store(GameEventsRequest $request)
     {
+        $stats = [];
         foreach($request->all()['stats'] as $event) {
-            GameEvent::create($event);
+            $event = GameEvent::create($event);
+            // this is added because sometimes it would return string for field "player_id".
+            $stats[] = [
+                'id' => (int) $event->id,
+                'game_id' => (int) $event->game_id,
+                'player_id' => (int) $event->player_id,
+                'stat_type_id' => (int) $event->stat_type_id,
+                'value' => (int) $event->value,
+                'created_at' => $event->created_at,
+                'updated_at' => $event->updated_at,
+            ];
+
         }
+        return $stats;
     }
 
     /**

@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\FantasyTeamDefault;
 use App\Http\Requests\CreateFantasyTeamRequest;
 use Illuminate\Http\Request;
+use App\FantasyTeam;
 
 class FantasyTeamsController extends Controller
 {
@@ -28,7 +30,10 @@ class FantasyTeamsController extends Controller
 
     public function store(CreateFantasyTeamRequest $request)
     {
-        return $request->all();
+        $budget = FantasyTeamDefault::where('name', '=', 'starting_budget')->first();
+        return FantasyTeam::create(
+            array_merge($request->all(),['total_budget' => $budget->value])
+        );
     }
 
     /**

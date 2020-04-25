@@ -20,5 +20,6 @@ class DatabaseSeeder extends Seeder
         $this->call(SeasonSeeder::class);
         $this->call(StatTypesSeeder::class);
         $this->call(StatTypesDefaultValuesSeeder::class);
+        $this->call(FantasyTeamDefaultsSeeder::class);
     }
 }

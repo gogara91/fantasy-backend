@@ -13,6 +13,6 @@ class FantasyTeamPlayer extends Model
 
     public function player()
     {
-        return $this->hasOne(Player::class);
+        return $this->belongsTo(Player::class);
     }
 }

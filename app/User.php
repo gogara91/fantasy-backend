@@ -36,4 +36,9 @@ class User extends Authenticatable implements JWTSubject
     {
         return [];
     }
+
+    public function fantasyTeams()
+    {
+        return $this->hasMany(FantasyTeam::class);
+    }
 }

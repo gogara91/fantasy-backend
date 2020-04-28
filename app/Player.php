@@ -17,7 +17,14 @@ class Player extends Model
         'updated_at',
     ];
 
-    public function teams() {
-        return $this->belongsToMany(Team::class, 'team_player_pivot');
+    public function team() {
+        return $this->belongsToMany(Team::class, 'team_player_pivot')
+            ->withPivot(['jersey_number'])
+            ->where('current_team', '=', '1');
+    }
+
+    public function fantasy_players()
+    {
+        return $this->belongsTo(FantasyTeamPlayer::class);
     }
 }

@@ -44,11 +44,9 @@ class FantasyTeamsController extends Controller
      */
     public function show($id)
     {
-        return FantasyTeam::with([
-            'fantasyTeamPlayers' => function($query) {
-                $query->with('player')->where('current_team', '=', 1);
-            }
-            ])->findOrFail($id);
+        return FantasyTeam::with(['players' => function($query) {
+            $query->with('player.team');
+        }])->findOrFail($id);
     }
 
     /**

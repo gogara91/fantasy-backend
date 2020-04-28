@@ -24,4 +24,9 @@ class FantasyTeam extends Model
     {
         return $this->hasMany(FantasyPlayerPoint::class);
     }
+
+    public function players()
+    {
+        return $this->hasMany(FantasyTeamPlayer::class);
+    }
 }

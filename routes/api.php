@@ -30,7 +30,8 @@ Route::group(['middleware' => 'auth:api'], function($router) {
     Route::post('/games/start-game/{id}', 'GamesController@startGame');
     Route::get('/games/live-game/{id}', 'GamesController@liveGame');
     Route::resource('/rounds', 'RoundsController');
-    Route::resource('/players', 'TeamsController@index');
+    Route::resource('/players', 'PlayersController');
+    Route::get('/players', 'PlayersController@playerThatHasTeam');
     Route::resource('/teams/games', 'TeamGamesController');
     Route::resource('/game-events', 'GameEventsController');
     Route::resource('/stat-types', 'StatTypesController');

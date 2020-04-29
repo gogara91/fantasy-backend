@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Player;
+use Illuminate\Support\Facades\DB;
 
 class PlayersController extends Controller
 {
@@ -14,7 +15,12 @@ class PlayersController extends Controller
      */
     public function index()
     {
-        return Player::with('teams');
+        return Player::with('team')->get();
+    }
+
+    public function playerThatHasTeam()
+    {
+        return Player::playersWithTeam();
     }
 
     /**

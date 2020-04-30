@@ -22,5 +22,6 @@ class DatabaseSeeder extends Seeder
         $this->call(StatTypesDefaultValuesSeeder::class);
         $this->call(FantasyTeamDefaultsSeeder::class);
         $this->call(PlayerJerseyNumberSeeder::class);
+        $this->call(PlayerPositionsSeeder::class);
     }
 }

@@ -3,21 +3,14 @@
 namespace App\Http\Controllers;
 
 use App\FantasyTeamDefault;
+use App\FantasyTeamPlayer;
 use App\Http\Requests\CreateFantasyTeamRequest;
+use App\Services\AddPlayerToFantasyTeam;
 use Illuminate\Http\Request;
 use App\FantasyTeam;
 
 class FantasyTeamsController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -25,8 +18,6 @@ class FantasyTeamsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-
-    //TODO: create a table with fantasy team settings
 
     public function store(CreateFantasyTeamRequest $request)
     {
@@ -45,41 +36,33 @@ class FantasyTeamsController extends Controller
     public function show($id)
     {
         return FantasyTeam::with(['players' => function($query) {
-            $query->with('player.team');
+            $query->with('player.team')->where('current_team', '=', '1');
         }])->findOrFail($id);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function edit($id)
+    public function addPlayer($id, Request $request)
     {
-        //
+        $service = new AddPlayerToFantasyTeam($id, $request->input('player_id'));
+        return $service->add();
     }
 
     /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
+     * @param int $id is primary key fantasy_team_players.
+     * TODO: later when rounds are implemented, this update to 0
+     * if player is added in some of previous rounds. If he's added in current round
+     * it should delete instead.
+     * Why: Because if there is going to be limit of adding or removing players,
+     * players that are added and removed in current round shouldn't
+     * deduct from available changes
      */
     public function destroy($id)
     {
-        //
+        $player = FantasyTeamPlayer::with('player')->findOrFail($id);
+        $player->current_team = 0;
+        $player->update();
+        $team = FantasyTeam::findOrFail($player->fantasy_team_id);
+        $team->used_budget = $team->used_budget - $player->player->fantasy_cost;
+        $team->update();
+        return ['used_budget' => $team->used_budget];
     }
 }

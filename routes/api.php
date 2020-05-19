@@ -37,6 +37,7 @@ Route::group(['middleware' => 'auth:api'], function($router) {
     Route::resource('/stat-types', 'StatTypesController');
     Route::resource('/fantasy-teams', 'FantasyTeamsController');
     Route::resource('/users', 'UsersController');
+    Route::post('fantasy-teams/{id}/add-player', 'FantasyTeamsController@addPlayer');
 });
 
 

@@ -5,9 +5,10 @@ namespace App\Http\Controllers;
 use App\FantasyTeamDefault;
 use App\FantasyTeamPlayer;
 use App\Http\Requests\CreateFantasyTeamRequest;
-use App\Services\AddPlayerToFantasyTeam;
+use App\Services\AddPlayerToFantasyTeamService;
 use Illuminate\Http\Request;
 use App\FantasyTeam;
+use App\Services\ReplacePlayersService;
 
 class FantasyTeamsController extends Controller
 {
@@ -42,9 +43,10 @@ class FantasyTeamsController extends Controller
 
     public function addPlayer($id, Request $request)
     {
-        $service = new AddPlayerToFantasyTeam($id, $request->input('player_id'));
+        $service = new AddPlayerToFantasyTeamService($id, $request->input('player_id'));
         return $service->add();
     }
+
 
     /**
      * @param int $id is primary key fantasy_team_players.
@@ -65,4 +67,12 @@ class FantasyTeamsController extends Controller
         $team->update();
         return ['used_budget' => $team->used_budget];
     }
+
+    public function replacePlayers($id, Request $request)
+    {
+        $service = new ReplacePlayersService($id, $request);
+        return $service->replace();
+    }
+
+
 }

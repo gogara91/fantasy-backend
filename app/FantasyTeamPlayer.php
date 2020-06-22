@@ -23,4 +23,16 @@ class FantasyTeamPlayer extends Model
     public function player() {
         return $this->belongsTo(Player::class);
     }
+
+    /**
+     * @param $teamId integer FANTASY TEAM ID
+     * @param $playerId integer Player id - id of original player from table "players"
+     */
+    public static function getPlayer($teamId, $playerId)
+    {
+        return FantasyTeamPlayer::with('player')->where('current_team', '=', '1')
+            ->where('fantasy_team_id', '=', $teamId)
+            ->where('player_id', '=', $playerId);
+    }
+
 }

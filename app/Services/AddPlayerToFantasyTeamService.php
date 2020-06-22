@@ -7,7 +7,7 @@ use App\FantasyTeamPlayer;
 use App\Player;
 use Illuminate\Support\Facades\DB;
 
-class AddPlayerToFantasyTeam {
+class AddPlayerToFantasyTeamService {
     private $teamId, $playerId, $player, $team;
 
     public function __construct($teamId, $playerId)
@@ -16,7 +16,6 @@ class AddPlayerToFantasyTeam {
         $this->playerId = $playerId;
         $this->player = Player::findOrFail($this->playerId);
         $this->team = FantasyTeam::findOrFail($this->teamId);
-
     }
 
     public function add()
@@ -32,7 +31,19 @@ class AddPlayerToFantasyTeam {
             if($this->team->used_budget > $this->team->total_budget) {
                 return response()->json(['error' => 'Not enough budget'], 422);
             }
+            $numberOfPlayers = FantasyTeamPlayer::where('fantasy_team_id', '=', $this->teamId)
+                ->where('current_team', '=', '1')
+                ->count();
+            if($numberOfPlayers == 12) {
+                throw new \Exception('You already have 12 players in team.');
+            }
             if($this->isPlayerPositionOccupied()) {
+                $numberOfBenchPlayers = FantasyTeamPlayer::where('fantasy_team_id', '=', $this->teamId)
+                    ->where('current_team', '=', '1')
+                    ->where('current_position', '=', 'B')->count();
+                if($numberOfBenchPlayers > 6) {
+                    throw new \Exception('Bench is already full.');
+                }
                 $playerPosition = 'B';
             }
 
